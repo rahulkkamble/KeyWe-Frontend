@@ -5,6 +5,7 @@ import './App.css';
 import HomePageHeader from './HomePageHeader';
 import HomeHeroSection from './HomeHeroSection';
 import PropertyList from './PropertyList';
+import RecommendationsSection from './RecommendationsSection';
 
 function App() {
   return (
@@ -12,6 +13,7 @@ function App() {
       <HomePageHeader />
       <HomeHeroSection />
       <PropertyList />
+      <RecommendationsSection />
     </div>
   );
 }

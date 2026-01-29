@@ -1,7 +1,8 @@
 /* --- App.css --- */
 
 /* 1. Base Settings */
-body, html {
+body,
+html {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #fcfcfc;
 }
@@ -9,7 +10,7 @@ body, html {
 body {
   /* Push content down so it doesn't hide behind the fixed navbar */
   /* This 80px matches the approximate height of the navbar */
-  padding-top: 80px; 
+  padding-top: 80px;
 }
 
 /* 2. Custom Login Button (Green Gradient) */
@@ -29,8 +30,45 @@ body {
 .nav-link {
   font-size: 1.05rem;
 }
+
 .nav-link:hover {
-  color: #5aab4c !important; 
+  color: #5aab4c !important;
+}
+
+/* 2. New Flex Layout for Perfect Centering */
+/* By default, this behaves like a standard navbar: Logo Left, Links Right */
+.navbar-equal-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Push items to edges */
+  width: 100%;
+}
+
+/* On smaller screens, the "Left Spacer" should be hidden so the Logo touches the left */
+.navbar-side-left {
+  display: none; 
+}
+/* Large Screen Layout (Desktop >= 1080px) */
+/* This activates the "Perfect Center" logic only when there is enough room */
+@media (min-width: 1080px) {
+  
+  /* Bring back the left spacer to balance the layout */
+  .navbar-side-left {
+    display: flex !important; /* Force it to show */
+  }
+
+  /* Force both sides to take equal width */
+  .navbar-side-content {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    min-width: 0;
+  }
+
+  /* Ensure right side aligns to end */
+  .navbar-side-right {
+    justify-content: flex-end;
+  }
 }
 
 /* 4. Hero Section */
@@ -40,11 +78,11 @@ body {
   flex-direction: column;
   justify-content: center;
   /* Large top/bottom padding creates the spacious look without vh */
-  padding-top: 8rem; 
+  padding-top: 8rem;
   padding-bottom: 8rem;
-  
+
   /* Soft background gradient */
-  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%, rgba(233,245,233,0.5) 100%);
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(233, 245, 233, 0.5) 100%);
 }
 
 /* 5. Location Badge (Mumbai) */
@@ -61,7 +99,7 @@ body {
   border: 1px solid #ced4da;
   color: #6c757d;
   font-weight: 500;
-  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   transition: all 0.2s;
 }
 
@@ -75,22 +113,27 @@ body {
 /* 1. Property Card Styling */
 .property-card {
   border: none;
-  border-radius: 16px; /* Soft, modern rounded corners */
+  border-radius: 16px;
+  /* Soft, modern rounded corners */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
-  overflow: hidden; /* Keeps image inside rounded corners */
+  overflow: hidden;
+  /* Keeps image inside rounded corners */
   background: white;
 }
 
 .property-card:hover {
-  transform: translateY(-5px); /* Lift effect */
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1); /* Deeper shadow on hover */
+  transform: translateY(-5px);
+  /* Lift effect */
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+  /* Deeper shadow on hover */
 }
 
 /* 2. Card Image & Overlays */
 .card-img-wrapper {
   position: relative;
   height: 200px;
-  background-color: #f0f0f0; /* Placeholder color */
+  background-color: #f0f0f0;
+  /* Placeholder color */
 }
 
 .card-img-top {
@@ -112,9 +155,21 @@ body {
   z-index: 2;
 }
 
-.badge-trending { background-color: #6a9e61; }    /* Green */
-.badge-demand { background-color: #d99c58; }      /* Orange/Gold */
-.badge-launch { background-color: #9cc45c; }      /* Light Green */
+.badge-trending {
+  background-color: #6a9e61;
+}
+
+/* Green */
+.badge-demand {
+  background-color: #d99c58;
+}
+
+/* Orange/Gold */
+.badge-launch {
+  background-color: #9cc45c;
+}
+
+/* Light Green */
 
 /* 4. Favorite/Heart Icon */
 .btn-favorite {
@@ -135,7 +190,8 @@ body {
 
 .btn-favorite:hover {
   background: white;
-  color: #dc3545; /* Bootstrap danger color (red) */
+  color: #dc3545;
+  /* Bootstrap danger color (red) */
 }
 
 /* 5. Typography */
@@ -168,30 +224,59 @@ body {
 /* 1. Verified Badge on Image */
 .badge-verified {
   position: absolute;
-  bottom: 10px;        /* Anchored to bottom */
-  /* left: 10px;          Anchored to left */
-  right: 10px;
-  background: rgba(255, 255, 255, 0.95); /* High contrast background */
+  bottom: 10px;
+  /* Anchored to bottom */
+  left: 10px;
+  /* right: 10px; */
+  background: rgba(255, 255, 255, 0.95);
+  /* High contrast background */
   color: #212529;
   font-size: 0.75rem;
   font-weight: 700;
   padding: 4px 8px;
   border-radius: 6px;
   z-index: 2;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+}
+
+.badge-verified-2 {
+  /* position: absolute; */
+  /* top: -15px;
+  left: 10px; */
+  background: rgba(255, 255, 255, 0.95);
+  color: #212529;
+  font-size: 0.5rem;
+  font-weight: 700;
+  /* padding: 8px 0px; */
+  margin: 5px 0px;
+  /* border: 1px solid #198754; */
+  border-radius: 6px;
+  z-index: 2;
+  /* box-shadow: 0 2px 8px rgba(0,0,0,0.15); */
   display: flex;
   align-items: center;
 }
 
 /* Optional: Make the checkmark icon a specific "Trusted Blue" */
 .badge-verified .text-primary {
-  color: #0d6efd !important; /* Bootstrap Blue */
+  /* color: #0d6efd !important; Bootstrap Blue */
+  color: #5aab4c !important;
+  /* Bootstrap Blue */
+}
+
+.badge-verified-2 .text-primary {
+  /* color: #0d6efd !important; Bootstrap Blue */
+  color: #5aab4c !important;
+  /* Bootstrap Blue */
 }
 
 /* 2. "Book" Button Styling */
 .btn-book-visit {
   background-color: #fff;
-  border: 1px solid #5aab4c; /* Matches your Green Theme */
+  border: 1px solid #5aab4c;
+  /* Matches your Green Theme */
   color: #5aab4c;
   font-weight: 600;
   border-radius: 8px;
@@ -210,4 +295,124 @@ body {
 .card-body {
   display: flex;
   flex-direction: column;
+}
+
+/* --- App.css (Additions for Recommendations Section) --- */
+
+/* 1. Recommendations Section Container */
+.recommendations-section {
+  position: relative;
+  /* For absolute positioning of decorative images */
+  background: linear-gradient(to bottom, #ffffff 0%, #e8f5e9 100%);
+  /* Soft fade to green */
+  padding-top: 6rem;
+  padding-bottom: 6rem;
+  overflow: hidden;
+  /* Prevents decorative images from causing scrollbars */
+}
+
+/* 2. Decorative Images (House & Pin) */
+.deco-img {
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
+  /* Behind text if necessary, but here we want them visible */
+  width: 150px;
+  /* Default width */
+  opacity: 0.9;
+}
+
+.deco-house {
+  left: 10%;
+  bottom: 2rem;
+}
+
+.deco-pin {
+  right: 10%;
+  bottom: 2rem;
+}
+
+/* Hide deco images on mobile to save space */
+@media (max-width: 768px) {
+  .deco-img {
+    display: none;
+  }
+}
+
+/* 3. Secondary Button (White) */
+.btn-custom-outline {
+  background-color: #ffffff;
+  border: 1px solid #dee2e6;
+  color: #212529;
+  font-weight: 600;
+  padding: 10px 24px;
+  transition: all 0.2s;
+}
+
+.btn-custom-outline:hover {
+  background-color: #f8f9fa;
+  border-color: #c1c9d0;
+  transform: translateY(-1px);
+}
+
+/* 4. Update Green Button padding for consistency */
+.btn-custom-green-lg {
+  padding: 10px 32px;
+  font-size: 1.05rem;
+}
+
+/* 5. Stats Bar */
+.stats-container {
+  background-color: #ffffff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 2rem;
+  margin-top: 4rem;
+  position: relative;
+  z-index: 2;
+  /* Sit on top of any background elements */
+  max-width: 1000px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.stat-item {
+  text-align: center;
+  /* Add border right except for the last item on large screens */
+  border-right: 1px solid #f0f0f0;
+}
+
+.stat-item:last-child {
+  border-right: none;
+}
+
+/* Remove borders on mobile when they stack */
+@media (max-width: 768px) {
+  .stat-item {
+    border-right: none;
+    margin-bottom: 1.5rem;
+  }
+
+  .stat-item:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.stat-value {
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: #198754;
+  /* Bootstrap Success Color */
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.stat-label {
+  color: #6c757d;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 1.1rem;
 }

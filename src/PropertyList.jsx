@@ -118,7 +118,7 @@ const PropertyList = () => {
                                     {property.verified && (
                                         <span className="badge-verified">
                                             <PatchCheckFill className="me-1 text-primary" size={14} />
-                                            Verified
+                                            KeyWe Verified
                                         </span>
                                     )}
 
@@ -148,6 +148,12 @@ const PropertyList = () => {
                                 {/* new Card Body */}
                                 {/* Card Body */}
                                 <div className="card-body d-flex flex-column">
+                                    {/* {property.verified && (
+                                        <span className="badge-verified-2">
+                                            <PatchCheckFill className="me-1 text-primary" size={14} />
+                                            KeyWe Verified
+                                        </span>
+                                    )} */}
                                     <h5 className="card-title text-truncate">{property.name}</h5>
                                     <p className="card-location mb-auto">{property.location}</p>
 
