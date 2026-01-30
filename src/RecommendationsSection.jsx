@@ -1,42 +1,33 @@
-// --- RecommendationsSection.jsx ---
 import React from 'react';
 import { HouseDoor, People, GeoAlt, Telephone } from 'react-bootstrap-icons';
 
 const RecommendationsSection = () => {
   return (
-    <section className="recommendations-section text-center">
+    <section className="relative bg-gradient-to-b from-white to-keywe-pale py-24 overflow-hidden text-center">
       
-      {/* Decorative Images (Placeholders) */}
-      {/* Replace 'src' with your actual House and Pin illustrations */}
-      {/* <img 
-        src="https://placehold.co/200x200/png?text=House+Illu" 
-        alt="House Decoration" 
-        className="deco-img deco-house" 
-      />
-      <img 
-        src="https://placehold.co/200x200/png?text=Pin+Illu" 
-        alt="Pin Decoration" 
-        className="deco-img deco-pin" 
-      /> */}
+      {/* Decorative Images (Hidden on mobile) */}
+      <div className="hidden md:block">
+        {/* Add images here with absolute positioning if needed */}
+      </div>
 
-      <div className="container position-relative" style={{ zIndex: 2 }}>
+      <div className="container mx-auto px-4 relative z-10">
         
         {/* Text Content */}
-        <div className="row justify-content-center mb-5">
-          <div className="col-lg-8">
-            <h2 className="display-6 fw-bold text-dark mb-3">
+        <div className="flex justify-center mb-12">
+          <div className="max-w-3xl">
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
               Get personalised recommendations
             </h2>
-            <p className="fs-5 text-secondary">
+            <p className="text-xl text-gray-500">
               Based on your budget, location & preferences
             </p>
 
             {/* Action Buttons */}
-            <div className="d-flex flex-wrap justify-content-center gap-3 mt-4">
-              <button className="btn btn-custom-green btn-custom-green-lg rounded-pill text-white fw-bold shadow-sm">
+            <div className="flex flex-wrap justify-center gap-4 mt-8">
+              <button className="btn-keywe-gradient px-8 py-3 text-lg">
                 Continue with Phone
               </button>
-              <button className="btn btn-custom-outline rounded-pill shadow-sm">
+              <button className="btn-keywe-outline">
                 Login to personalise
               </button>
             </div>
@@ -44,40 +35,26 @@ const RecommendationsSection = () => {
         </div>
 
         {/* Stats Bar */}
-        <div className="stats-container">
-          <div className="row align-items-center">
+        <div className="bg-white rounded-2xl shadow-soft p-8 mt-16 max-w-5xl mx-auto">
+          {/* Grid with dividers */}
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-y-8 md:divide-x divide-gray-100">
             
-            {/* Stat 1: Properties */}
-            <div className="col-6 col-md-3 stat-item">
-              <div className="stat-label">
-                <HouseDoor className="text-success" /> Properties
+            {/* Stat Items */}
+            {[
+              { icon: <HouseDoor />, label: "Properties", value: "153" },
+              { icon: <People />, label: "Partners", value: "1,475" },
+              { icon: <GeoAlt />, label: "On-site Visits", value: "331" },
+              { icon: <Telephone />, label: "Enquiries", value: "512" }
+            ].map((stat, index) => (
+              <div key={index} className="text-center px-4">
+                <div className="text-gray-500 font-medium flex items-center justify-center gap-2 text-lg">
+                  <span className="text-keywe-dark">{stat.icon}</span> {stat.label}
+                </div>
+                <span className="block text-3xl font-bold text-keywe-dark mt-2">
+                  {stat.value}
+                </span>
               </div>
-              <span className="stat-value">153</span>
-            </div>
-
-            {/* Stat 2: Partners */}
-            <div className="col-6 col-md-3 stat-item">
-              <div className="stat-label">
-                <People className="text-success" /> Partners
-              </div>
-              <span className="stat-value">1,475</span>
-            </div>
-
-            {/* Stat 3: On-site Visits */}
-            <div className="col-6 col-md-3 stat-item">
-              <div className="stat-label">
-                <GeoAlt className="text-success" /> On-site Visits
-              </div>
-              <span className="stat-value">331</span>
-            </div>
-
-            {/* Stat 4: Enquiries */}
-            <div className="col-6 col-md-3 stat-item">
-              <div className="stat-label">
-                <Telephone className="text-success" /> Enquiries
-              </div>
-              <span className="stat-value">512</span>
-            </div>
+            ))}
 
           </div>
         </div>

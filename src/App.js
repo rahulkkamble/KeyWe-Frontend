@@ -1,6 +1,5 @@
 // --- App.js ---
 import React from 'react';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import HomePageHeader from './HomePageHeader';
 import HomeHeroSection from './HomeHeroSection';

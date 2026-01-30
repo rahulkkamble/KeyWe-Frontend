@@ -1,68 +1,56 @@
-// --- HomePageHeader.jsx ---
 import React from 'react';
-import { List, GeoAltFill, ChevronRight } from 'react-bootstrap-icons';
+import { List } from 'react-bootstrap-icons'; // You can keep using these icons
 
 const HomePageHeader = () => {
   return (
-    <div>
-      {/* ================== Header Navbar ================== */}
-      <nav className="navbar navbar-expand-md navbar-light bg-white fixed-top shadow-sm py-3">
-        <div className="container-fluid px-md-5">
-          
-          {/* Main Flex Container */}
-          <div className="navbar-equal-container">
+    <header className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50 py-3">
+      <div className="container mx-auto px-4 md:px-12 h-full">
+        
+        {/* Main Flex Container */}
+        <div className="flex items-center justify-between w-full">
 
-            {/* 1. LEFT SIDE (Flex = 1) */}
-            <div className="navbar-side-content navbar-side-left">
-              {/* Hamburger Icon */}
-              {/* <button className="btn btn-link text-dark p-0 me-3 text-decoration-none">
+          {/* 1. LEFT SIDE (Flex = 1) */}
+          {/* 'hidden md:flex' hides this on mobile, pushing logo to left */}
+          <div className="flex-1 hidden md:flex items-center">
+             {/* Uncomment if needed:
+             <button className="text-gray-800 p-0 mr-3">
                 <List size={30} />
-              </button> */}
-              
-              {/* Empty placeholder to ensure this div takes up space */}
-              <div style={{ width: '1px' }}></div> 
-            </div>
-
-            {/* 2. CENTER: Brand Logo */}
-            {/* Logo sits naturally in the middle because sides are equal width */}
-            <a className="navbar-brand d-flex align-items-center fw-bold fs-3 text-dark m-0" href="/">
-              <span className="me-2 text-success d-flex align-items-center">
-                <svg width="32" height="32" viewBox="0 0 16 16" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                  <circle cx="8" cy="8" r="8" fill="#84cc76" />
-                  <path d="M8 4a4 4 0 0 1 4 4v4H4V8a4 4 0 0 1 4-4z" fill="#fff" />
-                </svg>
-              </span>
-              KeyWe
-            </a>
-
-            {/* 3. RIGHT SIDE (Flex = 1) */}
-            <div className="navbar-side-content navbar-side-right">
-              {/* Nav Links */}
-              <ul className="navbar-nav flex-row d-none d-md-flex me-4 gap-4">
-                <li className="nav-item">
-                  <a className="nav-link text-secondary fw-normal" href="#buy">Buy</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link text-secondary fw-normal" href="#sell">Sell</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link text-secondary fw-normal" href="#about">About</a>
-                </li>
-                <li className="nav-item">
-                  <a className="nav-link text-secondary fw-normal" href="#help">Help</a>
-                </li>
-              </ul>
-
-              {/* Login Button */}
-              <button className="btn btn-custom-green rounded-pill text-white fw-bold shadow-sm">
-                Login
-              </button>
-            </div>
-
+             </button> 
+             */}
+             <div className="w-px"></div> {/* Placeholder spacer */}
           </div>
+
+          {/* 2. CENTER: Brand Logo */}
+          <a className="flex items-center font-bold text-2xl text-gray-900 no-underline hover:text-gray-900" href="/">
+            <span className="mr-2 text-keywe-dark flex items-center">
+              <svg width="32" height="32" viewBox="0 0 16 16" fill="currentColor">
+                <circle cx="8" cy="8" r="8" fill="#84cc76" />
+                <path d="M8 4a4 4 0 0 1 4 4v4H4V8a4 4 0 0 1 4-4z" fill="#fff" />
+              </svg>
+            </span>
+            KeyWe
+          </a>
+
+          {/* 3. RIGHT SIDE (Flex = 1) */}
+          <div className="flex-1 flex items-center justify-end gap-6">
+            {/* Nav Links - Hidden on mobile */}
+            <nav className="hidden md:flex gap-6">
+              {['Buy', 'Sell', 'About', 'Help'].map((item) => (
+                <a key={item} href={`#${item.toLowerCase()}`} className="text-gray-500 font-normal hover:text-keywe-dark no-underline text-lg">
+                  {item}
+                </a>
+              ))}
+            </nav>
+
+            {/* Login Button */}
+            <button className="btn-keywe-gradient">
+              Login
+            </button>
+          </div>
+
         </div>
-      </nav>
-    </div>
+      </div>
+    </header>
   );
 };
 

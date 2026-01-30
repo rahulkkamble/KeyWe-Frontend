@@ -1,129 +1,57 @@
-// --- PropertyList.jsx ---
 import React from 'react';
 import { Heart, PatchCheckFill, LightningChargeFill } from 'react-bootstrap-icons';
 
-// Mock Data mimicking the image content
+// Mock Data (Same as your file)
 const properties = [
-    {
-        id: 1,
-        name: "GreenView Residences",
-        location: "Whitefield",
-        price: "₹ 85 L",
-        tag: "Trending",
-        tagType: "trending", // used for CSS class
-        verified: true, // New Field
-        image: "https://img.freepik.com/free-photo/3d-rendering-house-model_23-2150799723.jpg?t=st=1769680408~exp=1769684008~hmac=b7489d01c7b60d81e61b5eddbe268ede25f8075047c1965ca54145e1407eacd7", // Replace with real image
-    },
-    {
-        id: 2,
-        name: "Prestige Lakeside ...",
-        location: "Varthur",
-        price: "₹ 1.2 Cr",
-        tag: null, // No tag for this one
-        verified: true, // New Field
-        image: "https://img.freepik.com/free-photo/3d-rendering-house-model_23-2150799663.jpg?t=st=1769680553~exp=1769684153~hmac=ae25bf1315047ababfb574dbedbb4e639f956bd90e66269b55a0ce5290cc80ae",
-    },
-    {
-        id: 3,
-        name: "Skylight Tower",
-        location: "HSR Layout",
-        price: "₹ 65,000",
-        tag: "High Demand",
-        tagType: "demand",
-        verified: true, // New Field
-        image: "https://img.freepik.com/free-photo/3d-rendering-house-model_23-2150799673.jpg?t=st=1769680592~exp=1769684192~hmac=00e0bbf6af89509b95f803dcc1fde574eb60cd91aa9e7fab7b63270498ba7b0a",
-    },
-    {
-        id: 4,
-        name: "Sobha Dream Acres",
-        location: "Balagere",
-        price: "₹ 75 L",
-        tag: "New Launch",
-        tagType: "launch",
-        verified: true, // New Field
-        image: "https://img.freepik.com/free-photo/vertical-shot-white-building-clear-sky_181624-4575.jpg?semt=ais_hybrid&w=740&q=80",
-    },
-    {
-        id: 5,
-        name: "Orchid Aura",
-        location: "Hubarhalli",
-        price: "₹ 1.8 Cr",
-        tag: "Trending",
-        tagType: "trending",
-        verified: true, // New Field
-        image: "https://placehold.co/600x400/e0e0e0/909090?text=Orchid",
-    },
-    {
-        id: 6,
-        name: "Prestige Elysian",
-        location: "Bannerghatta",
-        price: "₹ 92 L",
-        tag: "High Demand",
-        tagType: "demand",
-        verified: true, // New Field
-        image: "https://placehold.co/600x400/e0e0e0/909090?text=Prestige",
-    },
-    {
-        id: 7,
-        name: "Parkside Meadows",
-        location: "Jakkur",
-        price: "₹ 92 L",
-        tag: "Trending",
-        tagType: "trending",
-        verified: true, // New Field
-        image: "https://placehold.co/600x400/e0e0e0/909090?text=Parkside",
-    },
-    {
-        id: 8,
-        name: "BVR Blossoms",
-        location: "Sarjapur Road",
-        price: "₹ 1.8 Cr",
-        tag: "High Demand",
-        tagType: "demand",
-        verified: true, // New Field
-        image: "https://placehold.co/600x400/e0e0e0/909090?text=BVR",
-    },
+    { id: 1, name: "GreenView Residences", location: "Whitefield", price: "₹ 85 L", tag: "Trending", tagType: "bg-[#6a9e61]", verified: true, image: "https://placehold.co/600x400/e0e0e0/909090?text=GreenView" },
+    { id: 2, name: "Prestige Lakeside ...", location: "Varthur", price: "₹ 1.2 Cr", tag: null, verified: true, image: "https://placehold.co/600x400/e0e0e0/909090?text=Prestige" },
+    { id: 3, name: "Skylight Tower", location: "HSR Layout", price: "₹ 65,000", tag: "High Demand", tagType: "bg-[#d99c58]", verified: true, image: "https://placehold.co/600x400/e0e0e0/909090?text=Skylight" },
+    { id: 4, name: "Sobha Dream Acres", location: "Balagere", price: "₹ 75 L", tag: "New Launch", tagType: "bg-[#9cc45c]", verified: true, image: "https://placehold.co/600x400/e0e0e0/909090?text=Sobha" },
+    { id: 5, name: "Orchid Aura", location: "Hubarhalli", price: "₹ 1.8 Cr", tag: "Trending", tagType: "bg-[#6a9e61]", verified: true, image: "https://placehold.co/600x400/e0e0e0/909090?text=Orchid" },
+    { id: 6, name: "Prestige Elysian", location: "Bannerghatta", price: "₹ 92 L", tag: "High Demand", tagType: "bg-[#d99c58]", verified: true, image: "https://placehold.co/600x400/e0e0e0/909090?text=Prestige" },
+    { id: 7, name: "Parkside Meadows", location: "Jakkur", price: "₹ 92 L", tag: "Trending", tagType: "bg-[#6a9e61]", verified: true, image: "https://placehold.co/600x400/e0e0e0/909090?text=Parkside" },
+    { id: 8, name: "BVR Blossoms", location: "Sarjapur Road", price: "₹ 1.8 Cr", tag: "High Demand", tagType: "bg-[#d99c58]", verified: true, image: "https://placehold.co/600x400/e0e0e0/909090?text=BVR" },
 ];
 
 const PropertyList = () => {
     return (
-        <section className="py-5 bg-light">
-            <div className="container">
+        <section className="py-20 bg-gray-50">
+            <div className="container mx-auto px-4 md:px-12">
 
                 {/* Section Header */}
-                <div className="mb-4">
-                    <h2 className="fw-bold text-dark">
-                        Trending Properties in <span className="text-dark">Mumbai</span>
+                <div className="mb-8">
+                    <h2 className="text-3xl font-bold text-gray-900">
+                        Trending Properties in <span className="text-gray-900">Mumbai</span>
                     </h2>
                 </div>
 
-                {/* Grid System */}
-                <div className="row g-4">
+                {/* CSS Grid System */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
                     {properties.map((property) => (
-                        <div key={property.id} className="col-12 col-sm-6 col-lg-3">
-
+                        <div key={property.id} className="group">
+                            
                             {/* Card Component */}
-                            <div className="card property-card shadow-sm h-100">
+                            <div className="bg-white rounded-2xl shadow-sm hover:shadow-hover hover:-translate-y-1 transition-all duration-300 overflow-hidden h-full flex flex-col border border-gray-100">
 
                                 {/* Image Wrapper */}
-                                <div className="card-img-wrapper">
-                                    {/* Badge (Conditional Rendering) */}
+                                <div className="relative h-48 bg-gray-200">
+                                    {/* Tag Badge */}
                                     {property.tag && (
-                                        <span className={`badge-overlay badge-${property.tagType}`}>
+                                        <span className={`absolute top-2 left-0 text-xs font-bold text-white px-3 py-1 rounded-r-full z-10 ${property.tagType}`}>
                                             {property.tag}
                                         </span>
                                     )}
 
-                                    {/* 2. NEW: Verified Badge (Bottom Left of Image) */}
+                                    {/* Verified Badge */}
                                     {property.verified && (
-                                        <span className="badge-verified">
-                                            <PatchCheckFill className="me-1 text-primary" size={14} />
+                                        <span className="absolute bottom-2 left-2 bg-white/95 text-gray-800 text-xs font-bold px-2 py-1 rounded-md z-10 shadow-sm flex items-center">
+                                            <PatchCheckFill className="mr-1 text-keywe-dark" size={14} />
                                             KeyWe Verified
                                         </span>
                                     )}
 
                                     {/* Heart Icon */}
-                                    <button className="btn-favorite text-secondary">
+                                    <button className="absolute top-2 right-2 bg-white/80 rounded-full p-2 text-gray-500 hover:bg-white hover:text-red-500 transition-colors z-10">
                                         <Heart size={16} />
                                     </button>
 
@@ -131,42 +59,24 @@ const PropertyList = () => {
                                     <img
                                         src={property.image}
                                         alt={property.name}
-                                        className="card-img-top"
+                                        className="w-full h-full object-cover"
                                     />
                                 </div>
 
                                 {/* Card Body */}
-                                {/* <div className="card-body">
-                  <h5 className="card-title text-truncate">{property.name}</h5>
-                  <p className="card-location mb-2">{property.location}</p>
-                  
-                  <div className="d-flex align-items-center mt-3">
-                    <span className="text-muted me-1 small">From</span>
-                    <span className="card-price">{property.price}</span>
-                  </div>
-                </div> */}
-                                {/* new Card Body */}
-                                {/* Card Body */}
-                                <div className="card-body d-flex flex-column">
-                                    {/* {property.verified && (
-                                        <span className="badge-verified-2">
-                                            <PatchCheckFill className="me-1 text-primary" size={14} />
-                                            KeyWe Verified
-                                        </span>
-                                    )} */}
-                                    <h5 className="card-title text-truncate">{property.name}</h5>
-                                    <p className="card-location mb-auto">{property.location}</p>
+                                <div className="p-4 flex flex-col flex-1">
+                                    <h5 className="text-lg font-bold text-gray-800 truncate mb-1">{property.name}</h5>
+                                    <p className="text-sm text-gray-500 mb-auto">{property.location}</p>
 
-                                    {/* 3. NEW: Price & Book Action Wrapper */}
-                                    <div className="d-flex justify-content-between align-items-end mt-3 border-top pt-3">
+                                    {/* Price & Book Wrapper */}
+                                    <div className="flex justify-between items-end mt-4 pt-4 border-t border-gray-100">
                                         <div>
-                                            <span className="text-muted small d-block" style={{ lineHeight: '1' }}>From</span>
-                                            <span className="card-price">{property.price}</span>
+                                            <span className="text-gray-400 text-xs block leading-tight">From</span>
+                                            <span className="text-lg font-bold text-gray-900">{property.price}</span>
                                         </div>
 
-                                        {/* The Action Button */}
-                                        <button className="btn btn-sm btn-book-visit">
-                                            <LightningChargeFill size={14} className="me-1" /> Book
+                                        <button className="bg-white border border-keywe-dark text-keywe-dark font-semibold rounded-lg px-4 py-1.5 text-sm hover:bg-keywe-dark hover:text-white hover:shadow-md transition-all flex items-center">
+                                            <LightningChargeFill size={14} className="mr-1" /> Book
                                         </button>
                                     </div>
                                 </div>
@@ -177,8 +87,8 @@ const PropertyList = () => {
                 </div>
 
                 {/* View All Button */}
-                <div className="text-center view-all-container">
-                    <button className="btn btn-custom-green rounded-pill px-5 py-2 text-white fw-bold shadow-sm">
+                <div className="text-center mt-12 mb-12">
+                    <button className="btn-keywe-gradient px-12 py-3">
                         View All
                     </button>
                 </div>
