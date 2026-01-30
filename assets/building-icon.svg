@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#CBEFF4"/>
+      <stop offset="1" stop-color="#B6E5EC"/>
+    </linearGradient>
+  </defs>
+  <rect width="512" height="512" fill="url(#bg)" x="-5.132" y="-2.996" style="stroke-width: 1;"/>
+  <path d="M 63.695 184.076 C 63.695 172.076 73.695 162.076 85.695 162.076 C 93.695 162.076 100.695 166.076 104.695 172.076 C 107.695 170.076 111.695 168.076 116.695 168.076 C 126.694 168.076 134.694 176.076 134.694 186.076 C 134.694 196.076 126.694 204.076 116.695 204.076 L 85.695 204.076 C 73.695 204.076 63.695 194.076 63.695 182.076 L 63.695 184.076 Z" fill="#FFFFFF" opacity="0.9" style="stroke-width: 1;"/>
+  <path d="M 350.159 81.363 C 350.159 67.363 362.159 55.363 376.159 55.363 C 386.159 55.363 394.159 60.363 398.159 67.363 C 402.159 64.363 407.159 62.363 413.159 62.363 C 427.159 62.363 439.159 74.363 439.159 88.363 C 439.159 102.363 427.159 114.363 413.159 114.363 L 376.159 114.363 C 362.159 114.363 350.159 102.363 350.159 88.363 L 350.159 81.363 Z" fill="#FFFFFF" opacity="0.9" style="stroke-width: 1;"/>
+  <polygon points="341.387 149.333 349.387 167.333 367.387 175.333 349.387 183.333 341.387 201.333 333.387 183.333 315.387 175.333 333.387 167.333" fill="#FFD966" style="stroke-width: 1;"/>
+  <rect x="74.195" y="317.331" width="58" height="130" rx="6" fill="#7AA6E3" style="stroke-width: 1;"/>
+  <rect x="138.194" y="282.331" width="64" height="165" rx="6" fill="#6A96D9" style="stroke-width: 1;"/>
+  <rect x="212.194" y="212.331" width="88" height="235" rx="8" fill="#2F5FA8" style="stroke-width: 1;"/>
+  <rect x="310.194" y="292.331" width="64" height="155" rx="6" fill="#6A96D9" style="stroke-width: 1;"/>
+  <rect x="380.194" y="322.331" width="54" height="125" rx="6" fill="#7AA6E3" style="stroke-width: 1;"/>
+  <rect x="253.779" y="170.102" width="6" height="45" fill="#2F5FA8" style="stroke-width: 1;"/>
+  <g fill="#AFC9F6" transform="matrix(1, 0, 0, 1, -21.80666, 47.33131)">
+    <rect x="112" y="290" width="10" height="14"/>
+    <rect x="112" y="320" width="10" height="14"/>
+    <rect x="180" y="265" width="10" height="14"/>
+    <rect x="180" y="295" width="10" height="14"/>
+    <rect x="254" y="195" width="12" height="16"/>
+    <rect x="288" y="195" width="12" height="16"/>
+    <rect x="254" y="230" width="12" height="16"/>
+    <rect x="288" y="230" width="12" height="16"/>
+    <rect x="352" y="270" width="10" height="14"/>
+    <rect x="352" y="300" width="10" height="14"/>
+    <rect x="418" y="300" width="10" height="14"/>
+    <rect x="418" y="330" width="10" height="14"/>
+  </g>
+</svg>
