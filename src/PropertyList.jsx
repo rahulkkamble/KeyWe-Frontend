@@ -1,4 +1,3 @@
-import React from 'react';
 import { Heart, PatchCheckFill, LightningChargeFill } from 'react-bootstrap-icons';
 
 // Mock Data (Same as your file)

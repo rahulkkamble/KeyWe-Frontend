@@ -1,4 +1,3 @@
-import React from 'react';
 import { HouseDoor, People, GeoAlt, Telephone } from 'react-bootstrap-icons';
 
 const RecommendationsSection = () => {

@@ -1,6 +1,3 @@
-import React from 'react';
-import { List } from 'react-bootstrap-icons'; // You can keep using these icons
-
 const HomePageHeader = () => {
   return (
     <header className="fixed top-0 left-0 right-0 bg-white shadow-sm z-50 py-3">
@@ -23,10 +20,11 @@ const HomePageHeader = () => {
           {/* 2. CENTER: Brand Logo */}
           <a className="flex items-center font-bold text-2xl text-gray-900 no-underline hover:text-gray-900" href="/">
             <span className="mr-2 text-keywe-dark flex items-center">
-              <svg width="32" height="32" viewBox="0 0 16 16" fill="currentColor">
+              {/* <svg width="32" height="32" viewBox="0 0 16 16" fill="currentColor">
                 <circle cx="8" cy="8" r="8" fill="#84cc76" />
                 <path d="M8 4a4 4 0 0 1 4 4v4H4V8a4 4 0 0 1 4-4z" fill="#fff" />
-              </svg>
+              </svg> */}
+              <img src="../assets/KeyWe Logo Horizontal.png" alt="" srcset="" />
             </span>
             KeyWe
           </a>
